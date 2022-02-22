@@ -154,6 +154,9 @@ public class Dictionary {
 					singleton.loadSuffixDict();
 					singleton.loadPrepDict();
 					singleton.loadStopWordDict();
+					//TODO 开启线程
+//					new Thread(()->Dictionary.getSingleton().reLoadMainDict()).start();
+
 
 					if(cfg.isEnableRemoteDict()){
 						// 建立监控线程
@@ -391,6 +394,9 @@ public class Dictionary {
 		this.loadExtDict();
 		// 加载远程自定义词库
 		this.loadRemoteExtDict();
+
+		// TODO 加载远程mysql自定义词库
+//		this.loadMySQLExtDict();
 	}
 
 	/**
